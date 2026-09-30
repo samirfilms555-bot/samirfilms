@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samir El-Hosary — Director & Filmmaker</title>
+  <meta name="description" content="Samir El-Hosary is a director and filmmaker specializing in commercials, branded content, visual storytelling, and creative production." />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Samir El-Hosary — Director & Filmmaker" />
+  <meta property="og:description" content="Commercial Director, Filmmaker & Visual Storyteller." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       SITE HEADER
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Samir El-Hosary Homepage">
+        <span>SAMIR EL-HOSARY</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links" role="navigation" aria-label="Main Navigation">
+        <a href="index.html#work" class="nav-link active">WORK</a>
+        <a href="about.html" class="nav-link">ABOUT</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+
+      <!-- Mobile Actions -->
+      <div class="header-actions">
+        <button class="mobile-nav-toggle" type="button" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero-section" aria-label="Introduction">
+    <div class="hero-background">
+      <img 
+        class="hero-bg-media" 
+        src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80" 
+        alt="Samir El-Hosary Hero Visual" 
+        loading="eager" 
+      />
+      <div class="hero-gradient-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <span class="hero-subtitle-top">Director & Filmmaker</span>
+      <h1 class="heading-display hero-title">SAMIR EL-HOSARY</h1>
+      <p class="hero-description">
+        I create visual stories, commercials and branded films that turn ideas into images people remember.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">VIEW WORK</a>
+        <a href="contact.html" class="btn btn-secondary">CONTACT ME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SHOWREEL SECTION (Optional Full-Width Player)
+       ============================================================ -->
+  <section class="showreel-section" id="showreel" aria-label="Director Showreel">
+    <div class="showreel-player-wrapper">
+      <video 
+        class="showreel-video" 
+        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" 
+        poster="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80" 
+        muted 
+        playsinline
+      ></video>
+      <button class="showreel-play-center" aria-label="Play Director Showreel">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </button>
+      <div class="showreel-controls">
+        <div class="showreel-progress-bar">
+          <div class="showreel-progress-fill"></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="btn-icon showreel-mute-btn">UNMUTE</button>
+          <button class="btn-icon showreel-fs-btn">FULLSCREEN</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SELECTED WORK / EDITORIAL PORTFOLIO GRID
+       ============================================================ -->
+  <section class="section" id="work" aria-label="Selected Projects">
+    <div class="container">
+      <header class="portfolio-header">
+        <div>
+          <h2 class="heading-section">SELECTED WORK</h2>
+          <p class="subheading-section">
+            Selected commercials, branded content and visual projects.
+          </p>
+        </div>
+
+        <!-- Filter Navigation -->
+        <nav class="portfolio-filters" aria-label="Portfolio Category Filters">
+          <button class="filter-btn active" data-category="all">ALL</button>
+          <button class="filter-btn" data-category="commercial">COMMERCIAL</button>
+          <button class="filter-btn" data-category="branded">BRANDED CONTENT</button>
+          <button class="filter-btn" data-category="reels">REELS</button>
+          <button class="filter-btn" data-category="social">SOCIAL</button>
+          <button class="filter-btn" data-category="other">OTHER</button>
+        </nav>
+      </header>
+
+      <!-- Editorial Behance-inspired Rhythm Grid -->
+      <div class="editorial-grid" id="portfolio-grid">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">SAMIR EL-HOSARY</div>
+          <div class="text-muted" style="font-size: 0.85rem;">Director & Filmmaker</div>
+        </div>
+        <div class="social-links-row" style="margin-top: 0;">
+          <a href="https://instagram.com/samirelhosary" target="_blank" rel="noopener" class="social-link">Instagram</a>
+          <a href="https://behance.net/samirelhosary" target="_blank" rel="noopener" class="social-link">Behance</a>
+          <a href="https://linkedin.com/in/samirelhosary" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
+          <a href="https://youtube.com/@samirelhosary" target="_blank" rel="noopener" class="social-link">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>All Rights Reserved © 2026 Samir El-Hosary.</p>
+        <div style="display: flex; gap: 1.5rem; align-items: center;">
+          <a href="#work" class="link-arrow">BACK TO TOP ↑</a>
+          <a href="admin.html" class="text-muted" style="font-size: 0.75rem;">ADMIN CMS</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main-bundle.js"></script>
+</body>
+</html>

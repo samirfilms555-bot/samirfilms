@@ -1,0 +1,217 @@
+/**
+ * SAMIR EL-HOSARY — Director & Filmmaker
+ * Responsive Styles & Breakpoints
+ * Tested for: 320px, 375px, 430px, 768px, 1024px, 1440px, 1920px
+ */
+
+/* ============================================================
+ * LARGE SCREENS (1440px - 1920px)
+ * ============================================================ */
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1680px;
+  }
+}
+
+/* ============================================================
+ * TABLET & DESKTOP TRANSITION (max-width: 1024px)
+ * ============================================================ */
+@media (max-width: 1024px) {
+  .editorial-grid {
+    gap: 2.5rem 1.5rem;
+  }
+
+  .project-card.medium-span-7,
+  .project-card.medium-span-5 {
+    grid-column: span 6;
+  }
+
+  .case-study-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .case-study-label {
+    position: static;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .about-portrait-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* ============================================================
+ * TABLET & MOBILE (max-width: 768px)
+ * ============================================================ */
+@media (max-width: 768px) {
+  :root {
+    --container-pad: 1.25rem;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+  }
+
+  /* Portfolio grid becomes 1 column on mobile */
+  .editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card.featured-hero,
+  .project-card.medium-span-6,
+  .project-card.medium-span-7,
+  .project-card.medium-span-5 {
+    grid-column: span 1;
+  }
+
+  .project-card.featured-hero .project-card-media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .portfolio-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .portfolio-filters {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .stills-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bts-masonry {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-meta-bar {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-pagination-bar {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .lightbox-prev {
+    left: 0.5rem;
+  }
+  .lightbox-next {
+    right: 0.5rem;
+  }
+  .lightbox-toolbar {
+    left: 1rem;
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+/* ============================================================
+ * SMALL MOBILE (320px - 430px)
+ * ============================================================ */
+@media (max-width: 430px) {
+  .case-study-meta-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .expertise-list {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-logo {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================================
+ * ACCESSIBILITY & REDUCED MOTION
+ * ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-bg-media {
+    transform: none !important;
+  }
+}

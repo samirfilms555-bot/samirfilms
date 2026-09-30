@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Director CMS — Samir El-Hosary</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="admin-body">
+
+  <!-- ============================================================
+       1. LOGIN VIEW (Shown if not authenticated)
+       ============================================================ -->
+  <div id="admin-login-view" class="admin-login-wrapper" style="display: flex;">
+    <div class="login-card">
+      <div class="login-brand">SAMIR EL-HOSARY</div>
+      <p class="login-subtitle">
+        Private management portal for director portfolio
+      </p>
+
+      <form id="admin-login-form" class="login-form">
+        <div class="form-group">
+          <label for="login-email" class="form-label">Email Address</label>
+          <input 
+            type="email" 
+            id="login-email" 
+            class="form-input" 
+            required 
+            placeholder="admin@samirelhosary.com" 
+            value="admin@samirelhosary.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="login-password" class="form-label">Password</label>
+          <input 
+            type="password" 
+            id="login-password" 
+            class="form-input" 
+            required 
+            placeholder="••••••••" 
+            value="director2026"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 0.5rem;">
+          AUTHENTICATE
+        </button>
+      </form>
+
+      <div class="demo-credentials-note">
+        <strong>Demo / Supabase Notice:</strong><br />
+        To connect to live Supabase, enter your project keys in <code>js/config.js</code>.<br />
+        For offline testing, enter any demo email and password to explore all CMS features.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       2. DASHBOARD VIEW (Shown when authenticated)
+       ============================================================ -->
+  <div id="admin-dashboard-view" class="admin-layout" style="display: none;">
+    
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" role="navigation">
+      <div class="sidebar-header">
+        <a href="index.html" target="_blank" class="sidebar-brand">
+          <span>SAMIR EL-HOSARY</span>
+        </a>
+        <div class="sidebar-role">Director CMS</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#overview" class="sidebar-link active" data-tab="overview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="#projects" class="sidebar-link" data-tab="projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span>Projects</span>
+        </a>
+        <a href="#add-project" class="sidebar-link" data-tab="add-project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          <span>Add Project</span>
+        </a>
+        <a href="#media" class="sidebar-link" data-tab="media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Media</span>
+        </a>
+        <a href="#feedback" class="sidebar-link" data-tab="feedback">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Feedback</span>
+        </a>
+        <a href="#profile" class="sidebar-link" data-tab="profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Profile</span>
+        </a>
+        <a href="#settings" class="sidebar-link" data-tab="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Site Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="connection-badge">
+          <span class="connection-dot"></span>
+          <span class="connection-text">Supabase Ready</span>
+        </div>
+        <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 0.5rem;">
+          <button id="sidebar-logout" class="link-arrow" style="font-size: 0.75rem; color: #ef4444;">
+            LOGOUT
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="admin-main" role="main">
+      <header class="admin-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button id="admin-sidebar-toggle" class="admin-mobile-toggle" aria-label="Toggle Navigation">☰</button>
+          <h1 id="admin-page-title" class="admin-topbar-title">Dashboard</h1>
+        </div>
+        <div class="admin-topbar-actions">
+          <a href="index.html" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.75rem;">
+            View Website ↗
+          </a>
+        </div>
+      </header>
+
+      <div id="admin-workspace" class="admin-content">
+        <!-- Rendered dynamically by admin.js, dashboard.js, media.js -->
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/admin-bundle.js"></script>
+</body>
+</html>

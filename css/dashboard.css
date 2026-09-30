@@ -1,0 +1,654 @@
+/**
+ * SAMIR EL-HOSARY — Private Admin Dashboard & CMS Styles
+ * Clean, dark creative CMS interface with dark sidebar and content workspace.
+ */
+
+.admin-body {
+  background-color: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+/* ============================================================
+ * LOGIN SCREEN
+ * ============================================================ */
+.admin-login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: radial-gradient(circle at 50% 20%, var(--dark-2) 0%, var(--black) 80%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--dark);
+  border: var(--border-subtle);
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.login-brand {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.login-brand::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--orange);
+}
+
+.login-subtitle {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 2.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.demo-credentials-note {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(213, 92, 3, 0.08);
+  border: 1px dashed rgba(213, 92, 3, 0.3);
+  font-size: 0.8rem;
+  color: var(--light);
+  line-height: 1.5;
+}
+
+/* ============================================================
+ * DASHBOARD LAYOUT (Sidebar + Main Workspace)
+ * ============================================================ */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Dark CMS Sidebar */
+.admin-sidebar {
+  width: 270px;
+  background-color: var(--dark);
+  border-right: var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+[dir="rtl"] .admin-sidebar {
+  border-right: none;
+  border-left: var(--border-subtle);
+}
+
+.sidebar-header {
+  padding: 2rem 1.5rem 1.5rem;
+  border-bottom: var(--border-subtle);
+}
+
+.sidebar-brand {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-brand::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--orange);
+}
+
+.sidebar-role {
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin-top: 0.25rem;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+  padding: 1.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--gray);
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-link svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.sidebar-link:hover {
+  color: var(--white);
+  background-color: var(--dark-2);
+}
+
+.sidebar-link.active {
+  color: var(--white);
+  background-color: var(--dark-2);
+  border-left: 3px solid var(--orange);
+}
+
+[dir="rtl"] .sidebar-link.active {
+  border-left: none;
+  border-right: 3px solid var(--orange);
+}
+
+.sidebar-footer {
+  padding: 1.25rem;
+  border-top: var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.connection-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--gray);
+  padding: 0.4rem 0.6rem;
+  background-color: var(--dark-2);
+  border-radius: 4px;
+}
+
+.connection-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+.connection-dot.demo {
+  background-color: #f59e0b;
+}
+
+/* ============================================================
+ * MAIN WORKSPACE CONTENT
+ * ============================================================ */
+.admin-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--black);
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  border-bottom: var(--border-subtle);
+  background-color: var(--dark);
+}
+
+.admin-topbar-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.admin-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-content {
+  padding: 2.5rem;
+  flex-grow: 1;
+  max-width: 1400px;
+  width: 100%;
+}
+
+/* ============================================================
+ * OVERVIEW STATS CARDS
+ * ============================================================ */
+.admin-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.admin-stat-card {
+  background-color: var(--dark);
+  border: var(--border-subtle);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.admin-stat-val {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+
+/* Quick Actions Card */
+.admin-card {
+  background-color: var(--dark);
+  border: var(--border-subtle);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.admin-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: var(--border-subtle);
+}
+
+.admin-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* ============================================================
+ * PROJECT TABLE & LIST
+ * ============================================================ */
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.table-filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.admin-search-input {
+  background-color: var(--dark);
+  border: var(--border-subtle);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  min-width: 250px;
+}
+
+.admin-search-input:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border: var(--border-subtle);
+  background-color: var(--dark);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+[dir="rtl"] .admin-table {
+  text-align: right;
+}
+
+.admin-table th {
+  background-color: var(--dark-2);
+  color: var(--gray);
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  border-bottom: var(--border-subtle);
+}
+
+.admin-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: var(--border-subtle);
+  vertical-align: middle;
+}
+
+.admin-table tr:hover td {
+  background-color: var(--dark-2);
+}
+
+.tbl-thumbnail {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  background-color: var(--dark-3);
+  border: var(--border-subtle);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-published {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-draft {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-archived {
+  background-color: rgba(143, 143, 143, 0.15);
+  color: var(--gray);
+  border: 1px solid rgba(143, 143, 143, 0.3);
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  padding: 0.4rem;
+  color: var(--gray);
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon:hover {
+  color: var(--white);
+}
+
+.btn-icon.danger:hover {
+  color: #ef4444;
+}
+
+/* ============================================================
+ * MULTI-SECTION PROJECT EDITOR & BILINGUAL TABS
+ * ============================================================ */
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: var(--border-subtle);
+  position: sticky;
+  top: 0;
+  background-color: var(--black);
+  z-index: 50;
+  padding-top: 1rem;
+}
+
+.editor-sections-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: var(--border-subtle);
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.editor-nav-item {
+  padding: 0.5rem 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.editor-nav-item.active {
+  color: var(--white);
+  border-bottom-color: var(--orange);
+}
+
+.editor-section {
+  background-color: var(--dark);
+  border: var(--border-subtle);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.editor-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.editor-section-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background-color: var(--orange);
+}
+
+/* Bilingual Language Tabs [ العربية ] [ ENGLISH ] */
+.lang-tab-container {
+  margin-bottom: 1.5rem;
+}
+
+.lang-tab-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.lang-tab-btn {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: var(--dark-2);
+  color: var(--gray);
+  border: var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.lang-tab-btn.active {
+  background-color: var(--orange);
+  color: var(--white);
+  border-color: var(--orange);
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Dropzone & Media Upload */
+.upload-dropzone {
+  border: 2px dashed rgba(244, 244, 241, 0.2);
+  background-color: var(--dark-2);
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: 1.5rem;
+}
+
+.upload-dropzone:hover,
+.upload-dropzone.dragover {
+  border-color: var(--orange);
+  background-color: rgba(213, 92, 3, 0.05);
+}
+
+.upload-dropzone-icon {
+  margin-bottom: 1rem;
+  color: var(--orange);
+}
+
+.upload-dropzone-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.upload-dropzone-hint {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+/* Media Gallery in Editor */
+.media-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.media-item-card {
+  position: relative;
+  background-color: var(--dark-2);
+  border: var(--border-subtle);
+  overflow: hidden;
+}
+
+.media-item-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background-color: var(--dark-3);
+}
+
+.media-item-info {
+  padding: 0.65rem;
+  font-size: 0.75rem;
+}
+
+.media-item-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.media-item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: var(--border-subtle);
+}
+
+/* Mobile Sidebar Toggle */
+.admin-mobile-toggle {
+  display: none;
+  padding: 0.5rem;
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform var(--transition-fast);
+  }
+
+  [dir="rtl"] .admin-sidebar {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-mobile-toggle {
+    display: block;
+  }
+
+  .form-grid-2,
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-content {
+    padding: 1.5rem;
+  }
+}
